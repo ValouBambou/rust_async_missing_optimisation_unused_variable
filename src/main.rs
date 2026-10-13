@@ -1,6 +1,5 @@
 #![no_std]
 #![no_main]
-#![feature(impl_trait_in_assoc_type)]
 
 use {defmt_rtt as _, embassy_rp as _, panic_probe as _};
 
