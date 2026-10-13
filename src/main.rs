@@ -10,5 +10,6 @@ async fn main(_spawner: embassy_executor::Spawner) {
     let res: Result<(), [u8; 40000]> = Ok(());
     assert!(res.is_ok());
     // }
-    embassy_futures::yield_now().await;
+    foo().await;
 }
+async fn foo() {}
