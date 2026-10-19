@@ -1,11 +1,9 @@
-#![no_std]
-#![no_main]
-
-use panic_probe as _;
-
-#[embassy_executor::main]
-async fn main(_spawner: embassy_executor::Spawner) {
-    // if brackets commented bss size: 41344 else 1344
+fn main() {
+    dbg!(size_of_val(&bar()));
+    assert!(size_of_val(&bar()) < 40_000);
+}
+async fn bar() {
+    // if brackets commented size: 40003 else 2
     // {
     let res: Result<(), [u8; 40000]> = Ok(());
     assert!(res.is_ok());
